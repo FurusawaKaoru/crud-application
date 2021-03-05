@@ -10,7 +10,7 @@
     <th>
       説明
     </th>
-    <tr v-for="event in events" :key="event.id">
+    <tr v-for="event in $store.getters.getEvents" :key="event.id">
       <td>
         {{ event.id }}
       </td>
@@ -31,16 +31,6 @@
 
 <script>
 export default {
-  setup() {
-    const events = [
-      { id: 1, title: 'test1', description: 'test description' },
-      { id: 2, title: 'test2', description: 'test description' },
-      { id: 3, title: 'test3', description: 'test description' },
-      { id: 4, title: 'test4', description: 'test description' },
-    ]
-
-    return { events }
-  }
 }
 </script>
 

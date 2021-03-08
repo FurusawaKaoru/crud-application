@@ -10,6 +10,16 @@ export default createStore({
     ]
   },
   mutations: {
+    updateEvent(state, payload) {
+      let targetIndex = 0
+      state.events.forEach((item, index) => {
+        if (item.id == payload.id) {
+          targetIndex = index
+        }
+      })
+
+      state.events[targetIndex] = { ...payload }
+    }
   },
   actions: {
   },

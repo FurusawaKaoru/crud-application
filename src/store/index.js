@@ -2,14 +2,12 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-    events: [
-      { id: 1, title: 'test1', description: 'test description' },
-      { id: 2, title: 'test2', description: 'test description' },
-      { id: 3, title: 'test3', description: 'test description' },
-      { id: 4, title: 'test4', description: 'test description' },
-    ]
+    events: []
   },
   mutations: {
+    setEvents(state, events) {
+      state.events = events
+    },
     updateEvent(state, payload) {
       let targetIndex = 0
       state.events.forEach((item, index) => {
@@ -22,6 +20,9 @@ export default createStore({
     }
   },
   actions: {
+    setEvents({ commit }, events) {
+      commit('setEvents', events)
+    }
   },
   modules: {
   },

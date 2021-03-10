@@ -32,7 +32,7 @@ export default {
 
     const hundleBtnClick = () => {
       store.commit('updateEvent', { ...state })
-      router.push('/')
+      router.push('/events')
     }
 
     return { state, hundleBtnClick }

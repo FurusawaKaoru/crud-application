@@ -10,7 +10,7 @@
     <th>
       説明
     </th>
-    <tr v-for="event in $store.getters.getEvents" :key="event.id">
+    <tr v-for="event in events" :key="event.id">
       <td>
         {{ event.id }}
       </td>
@@ -30,7 +30,15 @@
 </template>
 
 <script>
+import { useStore } from 'vuex'
+
 export default {
+  setup() {
+    const store = useStore()
+    const events = store.getters.getEvents
+
+    return { events }
+  }
 }
 </script>
 

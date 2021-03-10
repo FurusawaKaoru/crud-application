@@ -17,8 +17,7 @@ const routes = [
   {
     path: '/events/:id',
     name: 'EventsDetail',
-    component: EventsDetail,
-    props: true
+    component: EventsDetail
   },
 ]
 
